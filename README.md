@@ -1,3 +1,3 @@
 Prerequesits: Clojure Deps 
 
-Day 1 P1 & 2 in aoc.clj
+-main is found in aoc.clj, code for the various days can be found in the days/ folder.
