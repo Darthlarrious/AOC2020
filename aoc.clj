@@ -19,6 +19,7 @@
   (print "Day 4 Part 2:" (d4/day4Part2) "\n")
   (print "------\n")
   (print "Day 5 Part 1:" (d5/day5Part1) "\n")
+  (print "Day 5 Part 2:" (d5/day5Part2) "\n")
   )
 
 (defn -main [] (runDays))

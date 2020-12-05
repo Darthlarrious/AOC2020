@@ -27,3 +27,9 @@
   )
 
 (defn day5Part1 [] (reduce max (map #(:id (find-seat-id %)) day5Input)))
+
+(def seatList (sort (map #(:id (find-seat-id %)) day5Input)))
+
+(def seat (dec (last (first (filter #(not (= (- (last %) (first seatList)) (first %))) (map-indexed list seatList))))))
+
+(defn day5Part2 [] seat)
