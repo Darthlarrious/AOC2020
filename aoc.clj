@@ -2,7 +2,8 @@
   (:require [days.day1 :as d1]
             [days.day2 :as d2]
             [days.day3 :as d3]
-            [days.day4 :as d4]))
+            [days.day4 :as d4]
+            [days.day5 :as d5]))
 
 (defn runDays []
   (print "Day 1 Part 1:" (d1/day1Part1 2020 d1/day1Input) "\n")
@@ -16,6 +17,8 @@
   (print "------\n")
   (print "Day 4 Part 1:" (d4/day4Part1) "\n")
   (print "Day 4 Part 2:" (d4/day4Part2) "\n")
+  (print "------\n")
+  (print "Day 5 Part 1:" (d5/day5Part1) "\n")
   )
 
 (defn -main [] (runDays))
