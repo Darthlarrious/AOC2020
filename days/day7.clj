@@ -35,6 +35,26 @@
        amount
        (inc (reduce + (map #(calcBags (first %) (second %)) contents)))))))
 
+(defn extractRule1 [rule]
+  {:subject (first (s/split rule #" contain "))
+   :contents (map #(subs % 2) (s/split (last (s/split rule #" contain ")) #", "))})
 
-(defn day7Part1 []  )
+(def allBags1
+  (zipmap (set (map #(s/replace % #"s$" "") (flatten (map #(list (:subject %) (:contents %)) (map extractRule1 day7Input))))) (range)))
+
+(defn getContainingBags [starterBag]
+  (nth containsRules (allBags1 starterBag)))
+
+(defn countContainers [starterBag]
+  (loop [list (getContainingBags starterBag)
+         prevCount 0
+         currList '()]
+    (if (= (count list) prevCount)
+      currList
+      (recur
+        (set (flatten (map getContainingBags list)))
+        (count list)
+        (set (concat currList list))))))
+
+(defn day7Part1 []  (count (countContainers "shiny gold bag")) )
 (defn day7Part2 [] (dec (calcBags "shiny gold bag" 1)))
