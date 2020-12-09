@@ -2,7 +2,6 @@
   (:require [clojure.string :as s]))
 
 (def day8Input (s/split-lines (slurp "inputs/day8.txt")))
-(def day8Input2 (s/split-lines (slurp "inputs/day8.txt")))
 
 (defn parseInstruction [instr pointer accumulator]
   (let [[oper val] (s/split instr #" ")
@@ -48,4 +47,4 @@
 
 
 (defn day8Part1 [] (second (runProgram1 day8Input)))
-(defn day8Part2 [] (second (first (testProgram day8Input2))))
+(defn day8Part2 [] (second (first (testProgram day8Input))))
