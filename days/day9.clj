@@ -24,7 +24,23 @@
                      item])
       (subvec day9Input 25))))
 
+(defn findSet [target]
+  (loop [currentStart 0
+         current 1
+         currentVal (reduce + (subvec day9Input currentStart current))]
+    (cond
+      (= currentVal target)
+      (subvec day9Input currentStart current)
+      (> currentVal target)
+      (recur (inc currentStart) (+ 2 currentStart) (reduce + (subvec day9Input (inc currentStart) (+ 2 currentStart))))
+      true
+      (recur currentStart (inc current) (reduce + (subvec day9Input currentStart (inc current)))))))
 
+(defn getWeakness [target]
+  (let [set (findSet target)
+        min (apply min set)
+        max (apply max set)]
+    (+ min max)))
 
 (defn day9Part1 [] (last (first (findInvalid))))
-(defn day9Part2 [] nil)
+(defn day9Part2 [] (getWeakness (last (first (findInvalid)))))
