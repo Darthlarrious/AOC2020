@@ -12,9 +12,6 @@
 
 (def day10Input2 (sort (conj day10Input deviceVoltage)))
 
-(defn getNextOnes [list start]
-  (filter #(and (<= (- % start) 3) (> (- % start) 0 )) list))
-
 (defn day10
   [voltages]
     (let [ways (reduce #(assoc %1 %2 (->> (range (- %2 3) (inc %2))
