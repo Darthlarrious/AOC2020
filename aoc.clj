@@ -7,7 +7,8 @@
             [days.day6 :as d6]
             [days.day7 :as d7]
             [days.day8 :as d8]
-            [days.day9 :as d9]))
+            [days.day9 :as d9]
+            [days.day10 :as d10]))
 
 (defn runDays []
   (print "Day 1 Part 1:" (d1/day1Part1 2020 d1/day1Input) "\n")
@@ -36,6 +37,9 @@
   (print "------\n")
   (print "Day 9 Part 1:" (d9/day9Part1) "\n")
   (print "Day 9 Part 2:" (d9/day9Part2) "\n")
+  (print "------\n")
+  (print "Day 10 Part 1:" (d10/day10Part1) "\n")
+  (print "Day 10 Part 2:" (d10/day10Part2) "\n")
   )
 
 (defn -main [] (runDays))
